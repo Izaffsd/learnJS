@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent-1 parent">Parent 1</div>
+        <div class="parent-2 parent">
+            Parent 2 - Text
+            <!-- Comment -->
+             <span class="child">Child</span>
+        </div>
+    </div>
+    
+
+    <script>
+        const parent1 = document.querySelector('.grandparent');
+        // const parent1 = document.querySelector('.parent-1');
+        // const parent1 = document.querySelector('.parent-2');
+
+        console.log(parent1.childNodes)
+        // console.log(parent1.parentNode) // same
+
+        // .parent-2
+        // console.log(parent1.childNodes)  // NodeList(5) [text, comment, text, span.child, text]
+        // console.log(parent1.children) // HTMLCollection [span.child]
+
+
+    </script>
+</body>
+</html>

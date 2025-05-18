@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Latihan 1</title>
+    <style>
+        * { 
+        border: 2px solid #dedede; 
+        /* padding: 15px;  */
+        /* margin: 15px;  */
+    }
+   
+    html, body {
+        /* width: 100%; */
+        height: 100%;
+    }
+    body { 
+      /* max-width: 600px; */
+      font-family: sans-serif;
+      color: #fdfdfd;
+      text-align: center;
+    }
+    .biru-muda{
+        background-color: lightblue;
+    }
+    .kotak{
+        width: 15%;
+        height: 25px;
+      margin: 10px auto;
+
+    }
+    .merah {
+        background-color: red;
+    }
+    .hijau {
+        background-color: green;
+    }
+    .biru {
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+
+<h1>Bermain dengan warna</h1>
+<button type="button" id="tUbah"> hello </button>
+    
+<!-- <div> MAINKKAN DEKAT JS UNTUK DIV
+        <h2>boring</h2>
+    </div>
+    <div>
+        <h2>boring2</h2>
+    </div>
+    <div>
+        <h2>boring3</h2>
+    </div> -->
+<section id="b">
+
+</section>
+
+<h3>test gen color self</h3>
+
+<br><br>
+    <div class="kotak merah"></div>
+    <input type="range" name="sMerah" min="0" max="255">
+    <span id="sliderValue">100</span>
+
+    <div class="kotak hijau"></div>
+    <input type="range" name="sHijau" min="0" max="255">
+    <span id="sliderValueG">100</span>
+
+    <div class="kotak biru"></div>
+    <input type="range" name="sBiru" min="0" max="255">
+    <span id="sliderValueB">100</span>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

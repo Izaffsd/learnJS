@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* remove line default */
+            line-height: 0;
+        }
+        body {
+            background-color: rgb(173, 225, 255);
+            text-align: center;
+        }
+        .container{
+            border: 4px solid black;
+            width: 640px;
+            margin: 10px auto;
+            padding: 6px;
+            background-color: rgb(166, 204, 253);
+        }
+        .big{
+            margin-bottom: 5px;
+        }
+        .items{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 4px;
+        }
+        .items img{
+            width: 32%;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+       
+        .items img:hover{
+            opacity: 0.5;
+            border: 2px solid red;
+        }
+        @keyframes fade{
+            to{
+                opacity: 1;
+            }
+        }
+        .faded {
+            opacity: 0;
+            animation: fade 0.7s forwards;
+        }
+        .active{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="imgDom/cafe.jpg" id="mainImage" class="big" alt="Main View">
+        <div class="items">
+            <img src="imgDom/cafe.jpg" class="small" alt="cafe">
+            <img src="imgDom/chill.jpg" class="small" alt="chill">
+            <img src="imgDom/china.jpg" class="small" alt="china">
+            <img src="imgDom/sea2.jpg" class="small" alt="sea">
+            <img src="imgDom/sea3.jpg" class="small" alt="sea">
+            <img src="imgDom/seaFlower.jpg" class="small" alt="seaFlower">
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>

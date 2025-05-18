@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilihan Rawak</title>
+</head>
+<body>
+    <h1>Pilih Item Secara Rawak</h1>
+    <button id="randomButton">Pilih Item</button>
+    <p id="result">Tekan butang untuk dapatkan item.</p>
+
+    <script>
+        // Langkah 1: Sediakan senarai (array) item
+        const items = ['apple', 'banana', 'cherry', 'date'];
+
+        // Langkah 2: Pilih elemen untuk butang dan paparan hasil
+        const button = document.getElementById('randomButton');
+        const result = document.getElementById('result');
+
+        // Langkah 3: Tambahkan event listener untuk butang
+        button.addEventListener('click', function () {
+            // Hasilkan indeks rawak
+            const randomIndex = Math.floor(Math.random() * items.length);
+            // Math.random() = 0.5 dan items.length = 4, maka:
+            // 0.5 × 4 = 2.0 0.5×4=2.0
+
+            // Paparkan item rawak
+            result.textContent = `Pilihan rawak: ${items[randomIndex]}`;
+        });
+    </script>
+</body>
+</html>

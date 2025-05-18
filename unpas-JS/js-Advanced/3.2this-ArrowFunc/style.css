@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 1rem;
+}
+body{
+    background-color: rgb(108, 108, 206);
+}
+h2{
+    background-color: aqua;
+}
+em{
+    color: blueviolet;
+}
+.box{
+    width: 10rem;
+    border: 1px solid black;
+    height: 10rem;
+    margin: 3rem auto;
+    transition: .4s width,
+                .4s height .4s,
+                .4s margin-top .4s,
+                2s background-color;
+}
+.size{
+    width: 15rem;
+    height: 15rem;
+    margin-top: 1rem;
+}
+.caption{
+    background-color: black;
+    color: white;
+}

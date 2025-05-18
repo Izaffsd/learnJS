@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunting, Kertas & Batu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gunting, Kertas & Batu</h1>
+        <div class="game">
+            <div class="player-choice">
+                <h2>Pilih Satu:</h2>
+                <button class="choice" data-choice="gunting">
+                    <img src="gunting.png" alt="Gunting">
+                </button>
+                <button class="choice" data-choice="kertas">
+                    <img src="kertas.png" alt="Kertas">
+                </button>
+                <button class="choice" data-choice="batu">
+                    <img src="batu.png" alt="Batu">
+                </button>
+            </div>
+
+            <div class="result">
+                <h2 id="result-text">Pilih untuk bermain!</h2>
+                <p id="player-choice-text">Anda: <span id="player-choice">-</span></p>
+                <p id="comp-choice-text">Komputer: <span id="comp-choice">-</span></p>
+            </div>
+
+            <button id="play-again" class="hidden">Main Lagi</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunting, Kertas & Batu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gunting, Kertas & Batu</h1>
+        <p id="prompt-text">Masukkan pilihan anda: gunting, kertas, atau batu</p>
+        <input type="text" id="player-input" placeholder="Masukkan pilihan anda">
+        <button id="submit-btn">Submit</button>
+
+        <div class="result">
+            <p id="player-choice-text">Anda memilih: <span id="player-choice">-</span></p>
+            <p id="comp-choice-text">Komputer memilih: <span id="comp-choice">-</span></p>
+            <p id="result-text">Hasil: <span id="game-result">-</span></p>
+        </div>
+
+        <button id="play-again" class="hidden">Main Lagi</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
