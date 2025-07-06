@@ -5,52 +5,52 @@
 // papar
 
 
-// function total2kubus(a, b){
-//     var total;
-//     volA = a * a * a;
-//     volB = b * b * b;
-//     total = volA + volB;
+function total2kubus(a, b){
+    var total;
+    volA = a * a * a;
+    volB = b * b * b;
+    total = volA + volB;
 
-//     return total;
-// }
-// console.log('total = ' + total2kubus(8, 3))
+    return total;
+}
+console.log('total = ' + total2kubus(8, 3))
 
-// function total2kubus(a, b){
+function total2kubus(a, b){
 
-//     return a * a * a + b * b * b;
-// }
-// console.log( total2kubus(8, 3) )
+    return a * a * a + b * b * b;
+}
+console.log( total2kubus(8, 3) )
 
 
 
-// function tambah(a, b) {
+function tambah(a, b) {
 
-//     return a + b;
-// }
-// // var a = 5;
-// // var b = 3;
-// var a = parseInt(prompt('angka 1'));
-// var b = parseInt(prompt('angka 2'));
+    return a + b;
+}
+// var a = 5;
+// var b = 3;
+var a = parseInt(prompt('angka 1'));
+var b = parseInt(prompt('angka 2'));
 
-// var total = tambah(a*3, b*3);
-// console.log(total);
-// console.log(tambah(a, b)); // cth jika var total delete 
+var total = tambah(a*3, b*3);
+console.log(total);
+console.log(tambah(a, b)); // cth jika var total delete 
 
 
 // function untuk total tambah arguments
 
 // paparkan
 
-// function tambah(){
-//     var hasil = 0;
-//     for ( var i = 0; i < arguments.length; i++ ){
-//         hasil += arguments[i]; // hasil = hasil + arg[i]
-//     }
-//     return hasil;
+function tambah(){
+    var hasil = 0;
+    for ( var i = 0; i < arguments.length; i++ ){
+        hasil += arguments[i]; // hasil = hasil + arg[i]
+    }
+    return hasil;
 
-// }
-// var test = tambah(2, 3, 4, 7);
-// console.log(test);
+}
+var test = tambah(2, 3, 4, 7);
+console.log(test);
 
 
 // objek khas yang dipanggil arguments yang tersedia dalam fungsi JavaScript untuk mengakses semua argumen yang diberikan.
@@ -63,20 +63,20 @@
 
 
 
-// var a = 5;
+var a = 5;
 // a dapat diakses dari mana-mana bahagian kod di luar fungsi, termasuk di dalam fungsi tes itu sendiri.
 
 // var b; deklarasi di skop global
 
-// function tes(){
-//     var b = 3;
+function tes(){
+    var b = 3;
 // b hanya "hidup" di dalam fungsi tes dan tidak dapat diakses dari luar fungsi tersebut.
 
-// b = 3;   // mengubah nilai b di dalam fungsi
-//     // console.log(a);
-// }
-// tes();
-// console.log(b); // undefined if luar b = 3
+b = 3;   // mengubah nilai b di dalam fungsi
+    // console.log(a);
+}
+tes();
+console.log(b); // undefined if luar b = 3
 
 
 // logic telesuri jika dah 0 jadi 1

@@ -75,7 +75,7 @@ for ( var i = 0; i <= 7; i++ ) {
     star += '\n';
 }
 for ( var i = 7; i > 0; i-- ) {
-
+// Kalau tak nak baris kosong terakhir, tukar jadi: >
 
     for ( var w = 0; w < i; w++ ) {
         star += '*';

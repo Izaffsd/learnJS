@@ -1,17 +1,24 @@
 var arr = ['muhd' , 'iskandar' , 'affi' , 3];
 
 for (var i = 0; i < arr.length; i++){
-    console.log('Pelajar (index) ' + ( i + 1 ) + ' : ' + arr[i] );
+    console.log(`Pelajar (index) ${ i + 1 } : ${ arr[i] } ` );
 }
-
+// Pelajar (index) ' + ( i + 1 ) + ' : ' + arr[i] 
 
 // var arr = [ 'muhd' , 'iskandar' , 'affi' ];
 
 // method array  
-// 1. join , length
-// 2. push , pop
-// 3. shift , unshift
+// 1.  = gabungkan elemen array jadi string , length = dapatkan panjang (bilangan elemen) - bukan index
+// 2. push = tambah elemen di akhir array , pop = buang elemen terakhir
+// 3. shift – buang elemen pertama , unshift - tambah elemen di depan
 // 4. splice , slice
+
+// splice(start, deleteCount, item1, item2, ...)
+// Guna untuk tambah atau buang elemen dari array asal
+
+const nombor = [1, 2, 3, 4, 5];
+nombor.splice(2, 1, 99); // mula di index 2, buang 1, tambah 99
+console.log(nombor); // [1, 2, 99, 4, 5]
 
 
 // arr.push('bin' , 'mohd'); // tambah elemen akhir
@@ -22,7 +29,7 @@ for (var i = 0; i < arr.length; i++){
 
 // arr.splice(2, 0, 'bin' , 'mohd'); // tambah elemen sesuai index , 0 = delete 0 elemen
 // arr.splice(1, 2, 'bin' , 'mohd'); // output = muhd - bin - mohd
-         // start = 1 , delete = 2 , insert = 'bin' , 'mohd'
+//         //  start = 1 , delete = 2 , insert = 'bin' , 'mohd'
 
 // var arr2 = arr.slice(1, 3); // nak tampil kan start dari index 1 (iskandar) sampai index < 3 (affi)
 
@@ -65,6 +72,10 @@ var angka = [ 1 ,2 ,20 ,4 ,3 ,6 ,10 ,8 ,11 ];
 
 // angka.sort(); // start dari no awal 1 ,- , 10 ,11 angka
 // Fungsi sort dengan logik perbandingan
+
+
+// angka.sort((a, b) => a - b); // Susun secara menaik
+
 angka.sort(function(a, b){
     return a - b;
 //     Jika a - b adalah negatif, a dianggap lebih kecil daripada b, jadi a akan berada sebelum b dalam array yang disusun.
@@ -81,12 +92,21 @@ angka.sort(function(a, b){
 console.log(angka.join(' - '));
 
 
-// function hello(){
-//     return 'hello';
-// }
-// console.log(hello());
 
-// function hello(){
-//     console.log('hello');
-// }
-// hello();
+const angkaa = [1, 4, 2];
+
+angkaa.sort(function(a, b) {
+  console.log(`${a} : ${b}`);
+  return a - b;
+});
+
+
+function hello(){
+    return 'hellso';
+}
+console.log(hello());
+
+function hellos(){
+    console.log('heladadlo');
+}
+hellos();

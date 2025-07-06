@@ -40,43 +40,44 @@ function hello(){
 // x = 5;
 // console.log(x); // 5
 
-// 1. Variabel global (var) dieksekusi terlebih dahulu.
-// 2. Fungsi hanya dideklarasikan, tetapi tidak langsung dijalankan.
-// 3. console.log(printURL(username)) memanggil fungsi, dan hasilnya dicetak.
+// // 1. Variabel global (var) dieksekusi terlebih dahulu.
+// // 2. Fungsi hanya dideklarasikan, tetapi tidak langsung dijalankan.
+// // 3. console.log(printURL(username)) memanggil fungsi, dan hasilnya dicetak.
 
 // var nama = 'Iskandar'
 // var username = 'Izaffsd'
 
-// function printURL( username ){
+// function printURL(){
 //     var github = 'https://github.com/'
 //     return github + username
 // }
-// console.log(printURL( username ))
+// console.log(printURL())
 // // = https://github.com/Izaffsd
 
+console.log('jdsjs')
+var nama = 'Iskandar'
+var username = 'Izddaffsd'
 
-// var nama = 'Iskandar'
-// var username = 'Izaffsd'
-
-// function printURL( username ){
-//     var github = 'https://github.com/'
-//     return github + username
-// }
-// console.log(printURL( 'ali' ))
+function printURL(){
+    // console.log(arguments[0])
+    var github = 'https://github.com/'
+    return github + arguments[0]
+}
+console.log(printURL('jadkljf'))
 // // = https://github.com/ali
 
 
-var nama = 'Iskandar'
-var username = 'Izaffsd'
-// amik yg global klau takde baru error
+// var nama = 'Iskandar'
+// var username = 'Izaffsd'
+// // amik yg global klau takde baru error
 
-function printURL(){
-    // ali masuk ke obj arguments sbb ada obj baru time creation dan excution
-    console.log(arguments[0]) // = 'ali' index 1, index 2 oren
-    var github = 'https://github.com/'
-    return github + username
-}
-console.log(printURL( 'ali', 'oren' ))
+// function printURL(){
+//     // ali masuk ke obj arguments sbb ada obj baru time creation dan excution
+//     // console.log(arguments[0]) // = 'ali' index 1, index 2 oren
+//     var github = 'https://github.com/'
+//     return github + username
+// }
+// console.log(printURL( 'ali', 'oren' ))
 // = https://github.com/Izaffsd
 
 

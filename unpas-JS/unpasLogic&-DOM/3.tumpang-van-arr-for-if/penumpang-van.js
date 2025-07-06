@@ -102,6 +102,12 @@
 
 // after to malay
 
+
+
+// tambahPenumpang(nama, penumpang)
+
+// hapusPenumpang(nama, penumpang)
+
 var penumpang = [];
 
 // Fungsi untuk menambah penumpang, dengan dua parameter - namaPenumpang dan array penumpang
@@ -132,6 +138,7 @@ var tambahPenumpang = function(namaPenumpang, penumpang) {
             }
             
             // Jika sudah ada penumpang dengan nama yang sama
+            // == check je
             else if (penumpang[i] == namaPenumpang) {
 
                 // Paparkan mesej ralat
@@ -142,6 +149,7 @@ var tambahPenumpang = function(namaPenumpang, penumpang) {
             }
 
             // Jika semua tempat duduk penuh
+            // Semua tempat duduk penuh, jadi kita tambahkan kerusi baru di hujung van.
             else if (i == penumpang.length - 1) {
 
                 // Tambah penumpang di akhir array

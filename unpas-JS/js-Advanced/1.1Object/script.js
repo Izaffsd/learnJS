@@ -1,24 +1,72 @@
 // 1. prototype
 
-// 1. object literal
-// tidak efektif kalau banyak
-// nama object takaleh sama
+// FunctionName.prototype
+
+//  (constructor function)
+
+
+function Pelajar(nama) {
+  this.nama = nama;
+}
+Pelajar.prototype.sayHi = function () {
+  console.log("Hi saya " + this.nama);
+};
+
+let ani = new Pelajar("Ani");
+let bob = new Pelajar("Bob");
+
+ani.sayHi(); // Hi saya Ani
+bob.sayHi(); // Hi saya Bob
+
+console.log(Pelajar.prototype); 
+
+
+// Inheritance tu konsep OOP
+const parent = {
+  hello() {
+    console.log("Hi from parent");
+  }
+};
+
+const child = Object.create(parent);
+
+console.log(child); // {} kosong
+child.hello(); // Hi from parent
+
+child.nama = "Iskandar";
+console.log(child); // { nama: 'Iskandar' }
+child.hello(); // Masih boleh guna dari parent
+
+
+
+// Bayangkan methodPilihNo2 = "Parent"
+// objBaru = "Anak"
+
+// Anak tu tak ada harta (kosong),
+// Tapi bila dia perlu sesuatu, dia pinjam/warisi dari parent.
+
+
+// // 1. object literal
+// // tidak efektif kalau banyak
+// // nama object takaleh sama
 // let objectLit = {
 //     nama: 'iskandar',
 //     umur: 19,
 //     bulking: function(gProtien){        
-//         return `suka makan ayam ${gProtien}g protien jer`
+//         return `saya ${this.nama} suka makan ayam ${gProtien}g protien jer`
 //     }
 // }
-// // objectLit.bluking(23)
 
 // let eren = {
 //     nama: 'eren',
 //     umur: 19,
 //     bulking: function(gProtien){        
-//         return `suka makan ayam ${gProtien}g protien jer`
+//         return `umur saya ${this.umur} suka makan ayam ${gProtien}g protien jer`
 //     }
 // }
+// console.log(eren.bulking(23))
+
+
 
 // // 2. func declare
 
@@ -40,7 +88,7 @@
     
 // }
 
-// function Student(nama, umur, total){
+// function Studentt(nama, umur, total){
 //     // hubung dengan objek lain
 //     let pilihanNo = Object.create(methodPilihNo)
     
@@ -49,6 +97,9 @@
 //     pilihanNo.total = total
 
 
+// //     bila dah buat:    let pilihanNo = Object.create(methodPilihNo)
+
+// // Tak perlu lagi:
 //     // buat properti nama kira yg berisi dari objek lain
 //     // pilihanNo.tambah = methodPilihNo.tambah;
 //     // pilihanNo.darab = methodPilihNo.darab;
@@ -58,30 +109,36 @@
 // }
 
 
-// let henry = Student('henry', 4, 0)
-// let surinto = Student('surinto', 3, 0)
+// let henry = Studentt('henry', 4, 0)
+// let surinto = Studentt('surinto', 3, 0)
+
+// // henry.tambah(10, 5);
 
 
 
-// function Student(nama, energi){
-//     let student = {}
-//     student.nama = nama
-//     student.energi = energi
+function Student1(nama, energi){
+    let student = {}
+    student.nama = nama
+    student.energi = energi
 
-//     student.makan = function(ayam){
-//         this.energi += ayam
-//         console.log(`hi ${this.nama}, selaman makan -> ${this.energi}`)
-//     }
+    student.makan = function(ayam){
+        if (typeof ayam !== 'number') {
+            console.log("Sila masukkan nombor untuk makan.");
+            return;
+        }
+        this.energi += ayam
+        console.log(`hi ${this.nama}, selamat makan -> ${this.energi}`)
+    }
 
-//     student.main = function(jam){
-//         this.energi -= jam
-//         console.log(`kamu banyak main dan bermalasan ${this.nama} = ${this.energi}`)
-//     }
-//     return student
-// }
+    student.main = function(jam){
+        this.energi -= jam
+        console.log(`kamu banyak main dan bermalasan ${this.nama} = ${this.energi}`)
+    }
+    return student
+}
 
-// let senah = Student('senah', 8)
-// let yahiko = Student('yahiko', 8)
+let senah = Student1('senah', 8)
+let yahiko = Student1('yahiko', 8)
 
 
 
@@ -90,22 +147,22 @@
 // tidak perlu declare var object ( var = {}) dan tak perlu direturn sebab dah auto
 // keyword new
 
-// let funConstr = function(no1, no2){
-//     this.no1 = no1
-//     this.no2 = no2
-//     this.no3New = function(){
-//         return no1 + no2
-//     }
-// }
+let funConstr = function(no1, no2){
+    this.no1 = no1
+    this.no2 = no2
+    this.no3New = function(){
+        return no1 + no2
+    }
+}
 
-// let totalConst = new funConstr(2, 3)
+let totalConst = new funConstr(2, 3)
 
 
 
 // 4. object.create()
+// Object.create() (Prototypal Inheritance gaya manual)
 
-
-const methodPilihNo = {
+const methodPilihNo2 = {
     tambah: function(no1, no2){
         this.total = no1 + no2
         console.log(`total tambah + kedua arg ${no1} dan ${no2} adalah ${this.total}`)
@@ -122,73 +179,80 @@ const methodPilihNo = {
     }
     
 }
+// this merujuk kepada objek yang memanggil method tu — dalam kes ini: pelajar
+// this.total = ..., JS akan tambah property total ke dalam pelajar itu sendiri.
+const pelajar = Object.create(methodPilihNo2);
+pelajar.nama = 'Iskandar';
+
+
+
 
 // protype inheritance
 
-function Student(nama, umur, total){
-    // hubung dengan objek lain
-    // let pilihanNo = Object.create(methodPilihNo)
-    // belakang layar
-    // let this = {} / Object.create(Student.prototype)
+// function Student(nama, umur, total){
+//     // hubung dengan objek lain
+//     // let pilihanNo = Object.create(methodPilihNo2)
+//     // belakang layar
+//     // let this = {} / Object.create(Student.prototype)
     
-    this.nama = nama
-    this.umur = umur
-    this.total = total
+//     this.nama = nama
+//     this.umur = umur
+//     this.total = total
 
-    // buat properti nama kira yg berisi dari objek lain
-    // pilihanNo.tambah = methodPilihNo.tambah;
-    // pilihanNo.darab = methodPilihNo.darab;
-    // pilihanNo.bahagi = methodPilihNo.bahagi;
+//     // buat properti nama kira yg berisi dari objek lain
+//     // pilihanNo.tambah = methodPilihNo2.tambah;
+//     // pilihanNo.darab = methodPilihNo2.darab;
+//     // pilihanNo.bahagi = methodPilihNo2.bahagi;
 
-    // return this
-}
+//     // return this
+// }
 
-Student.prototype.tambah = function( no1, no2 ){
-    this.total = no1 + no2
-    return `TOTAL TAMBAH ${no1} + ${no2} adalah ${this.total} tau ${this.nama}`
-}
+// Student.prototype.tambah = function( no1, no2 ){
+//     this.total = no1 + no2
+//     return `TOTAL TAMBAH ${no1} + ${no2} adalah ${this.total} tau ${this.nama}`
+// }
 
-Student.prototype.darab = function( no1, no2 ){
-    this.total = no1 * no2
-    return `TOTAL darab ${no1} * ${no2} adalah ${this.total} tau ${this.nama}`
-}
+// Student.prototype.darab = function( no1, no2 ){
+//     this.total = no1 * no2
+//     return `TOTAL darab ${no1} * ${no2} adalah ${this.total} tau ${this.nama}`
+// }
 
-Student.prototype.bahagi = function( no1, no2 ){
-    this.total = no1 / no2
-    return `TOTAL bahagi ${no1} / ${no2} adalah ${this.total} tau ${this.nama}`
-}
+// Student.prototype.bahagi = function( no1, no2 ){
+//     this.total = no1 / no2
+//     return `TOTAL bahagi ${no1} / ${no2} adalah ${this.total} tau ${this.nama}`
+// }
 
 
-// versi Class yg terjadi protype juga
-class Student {
-    constructor( nama, year, total ){
-        this.nama = nama
-        this.year = year
-        this.total = total
-    }
+// // versi Class yg terjadi protype juga
+// class StudentC {
+//     constructor( nama, year, total ){
+//         this.nama = nama
+//         this.year = year
+//         this.total = total
+//     }
 
-    makan( no1, no2 ){
-        this.total = no1 + no2
-        return `TOTAL TAMBAH ${no1} + ${no2} adalah ${this.total} tau ${this.nama}`
-    }
+//     makan( no1, no2 ){
+//         this.total = no1 + no2
+//         return `TOTAL TAMBAH ${no1} + ${no2} adalah ${this.total} tau ${this.nama}`
+//     }
     
-    darab( no1, no2 ){
-        this.total = no1 * no2
-        return `TOTAL darab ${no1} * ${no2} adalah ${this.total} tau ${this.nama}`
-    }
+//     darab( no1, no2 ){
+//         this.total = no1 * no2
+//         return `TOTAL darab ${no1} * ${no2} adalah ${this.total} tau ${this.nama}`
+//     }
     
-    bahagi( no1, no2 ){
-        this.total = no1 / no2
-        return `TOTAL bahagi ${no1} / ${no2} adalah ${this.total} tau ${this.nama}`
-    }
-}
+//     bahagi( no1, no2 ){
+//         this.total = no1 / no2
+//         return `TOTAL bahagi ${no1} / ${no2} adalah ${this.total} tau ${this.nama}`
+//     }
+// }
 
-let henry = new Student('henry', 4, 0)
-let surinto = new Student('surinto', 3, 0) 
+// let henry2 = new StudentC('henry', 4, 0)
+// let surinto2 = new StudentC('surinto', 3, 0) 
 
 
-let arr = [3, 2, 4] // dekt console Array.protype , Object.protype, Number.protype
-console.log(arr.reverse())
+// let arr = [3, 2, 4] // dekt console Array.protype , Object.protype, Number.protype
+// console.log(arr.reverse())
 
 
 

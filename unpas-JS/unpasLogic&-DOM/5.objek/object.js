@@ -1,70 +1,67 @@
-// // kat console =
-// var mhs = {}
-// mhs.nama = 'iskandar'
-// mhs.umur = 3
-// mhs['nama']
+// kat console =
+var mhs = {}
+mhs.nama = 'iskandar'
+mhs.umur = 3
+mhs['nama']
 
-// var student = {
+var student = {
 
-//     nama : 'iskandar',
-//     umur :  19,
-//     yes : true,
-//     iphone : [ 5, 10, 13, 15],
-//         alamat : {
-//             norumah : 'No.35',
-//             lorong : ' Jalan nilam 1/1',
-//             taman : 'Taman Sri Nanding',
+    nama : 'iskandar',
+    umur :  19,
+    yes : true,
+    iphone : [ 5, 10, 13, 15],
+        alamat : {
+            norumah : 'No.35',
+            lorong : ' Jalan nilam 1/1',
+            taman : 'Taman Sri Nanding',
 
-//         }
+        }
 
-// }
+}
 
-// student.nama= ' senah';
+student.nama= ' senah';
 
-// // Object Literal
-// var student1 = {
+// Object Literal
+var student1 = {
 
-//     nama : 'iskandar',
-//     umur :  19,
-//     yes : true,
-//     iphone : [ 5, 10, 13, 15]
-// }
+    nama : 'iskandar',
+    umur :  19,
+    yes : true,
+    iphone : [ 5, 10, 13, 15]
+}
 
-// var student2 = {
+var student2 = {
 
-//     nama : 'iskandar',
-//     umur :  19,
-//     yes : true,
-//     iphone : [ 5, 10, 13, 15]
-// }
+    nama : 'iskandar',
+    umur :  19,
+    yes : true,
+    iphone : [ 5, 10, 13, 15]
+}
 
-// // Func declare
-// function buatobjek(nama, umur, yes, iphone) {
+// Func declare
+function buatobjek(nama, umur, yes, iphone) {
 
-//     var student = {};
+    var student = {};
 
-//     student.nama = nama;
-//     student.umur = umur;
-//     student.yes = yes;
-//     student.iphone = iphone;
+    student.nama = nama;
+    student.umur = umur;
+    student.yes = yes;
+    student.iphone = iphone;
 
-//     return student;
-// }
+    return student;
+}
 
-// var student3 = buatobjek('iskandar', 20, true, [2, 10, 13]);
+var student3 = buatobjek('iskandar', 20, true, [2, 10, 13]);
 
 
 
 // return Adalah untuk Memberi Nilai kepada Pemanggil:
+
+
+
 // func Constructor / seperti class hruf besar
 let Namaobjek = function (nama, umur, yes, iphone) {
   this.nama = nama;
-
-
-
-
-
-  
   this.umur = umur;
   this.yes = yes;
   this.iphone = iphone;

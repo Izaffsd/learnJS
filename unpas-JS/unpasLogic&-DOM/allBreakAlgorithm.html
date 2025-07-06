@@ -130,122 +130,140 @@
 
 
 
-// // Fungsi dan Parameter
-// // Tujuan: Untuk membahagikan kod kepada blok kecil yang boleh digunakan semula.
+// Fungsi dan Parameter
+// Tujuan: Untuk membahagikan kod kepada blok kecil yang boleh digunakan semula.
 
-// // Fungsi dengan parameter
-// // para = minta harga dan diskaun %
-// function kiraDiskaun(harga, diskaunPeratus){
-//     // function untuk kira diskaun = 100 darab ( 20 / 100 ) = 0.2 * 100 = 20
-//     const diskaun = harga * ( diskaunPeratus / 100 )
-//     // return ke function kiraDiskaun
-//     return harga - diskaun
-// }
+// Fungsi dengan parameter
+// para = minta harga dan diskaun %
+function kiraDiskaun(harga, diskaunPeratus){
+    // function untuk kira diskaun = 100 darab ( 20 / 100 ) = 0.2 * 100 = 20
+    const diskaun = harga * ( diskaunPeratus / 100 )
+    // return ke function kiraDiskaun
+    return harga - diskaun
+}
 
-// // calculate it
+// calculate it
 
-// const hasil = kiraDiskaun(100, 20)
-// console.log('total setelah diskaun = RM' + hasil)
+const hasil = kiraDiskaun(100, 20)
+console.log('total setelah diskaun = RM' + hasil)
 
-// // Memanggil fungsi
-// // Harga asal RM100, diskaun 20%
-
-
-
-// // Buat fungsi yang menerima senarai markah pelajar dalam bentuk array, mengira purata markah, dan menentukan gred berdasarkan purata tersebut.
-
-// // Kriteria Gred:
-
-// // A: 80 - 100
-// // B: 65 - 79
-// // C: 50 - 64
-// // D: 40 - 49
-// // F: 0 - 39
-
-// // function untuk terima markah pelajar ( array ), kira purata markah dan tentukan gred based on purata
-
-// function senaraiMarkah(nama, markah){
-//     if ( markah >= 80 ) return 'nama : ' + nama + '\n' +'Gred : ' + 'A'
-//     else if( markah >= 65) return 'B'
-//     else if( markah >= 50) return 'C'
-//     else if( markah >= 40) return 'D'
-//     else if( markah >= 0) return 'F'
-// }
-
-// const markahPelajar = senaraiMarkah('Ali', 90)
-// let result
-// if ( markahPelajar >= 40 ) {
-//     result = 'Tahniah '
-// }
-// else {
-//     result = 'cuba lagi! '
-// }
-
-// console.log(result + '\n' + markahPelajar)
+// Memanggil fungsi
+// Harga asal RM100, diskaun 20%
 
 
 
-// // Objek
-// // Tujuan: susun data structre and function ( method )
-// // Bila Digunakan: uruskan banyak data berkaitan seperti maklumat pengguna atau produk.
+// Buat fungsi yang menerima senarai markah pelajar dalam bentuk array, mengira purata markah, dan menentukan gred berdasarkan purata tersebut.
 
-// // Objek
-// const pelajar = {
-//     nama: 'Iskandar',
-//     hp: [11, 'XR'],
-//     kenalDiri: function(){
-//         console.log(`nama saya ${this.nama} dan hp saya ada ${this.hp}`)
-//     }
-// }
+// Kriteria Gred:
 
-// // function untuk kenalkan diri = paparkan
+// A: 80 - 100
+// B: 65 - 79
+// C: 50 - 64
+// D: 40 - 49
+// F: 0 - 39
 
-// // Akses data dalam objek
-// console.log(pelajar.nama)
-// // Iskandar
-// pelajar.kenalDiri()
-// // Hai, saya Iskandar dan saya belajar JavaScript.
+// function untuk terima markah pelajar ( array ), kira purata markah dan tentukan gred based on purata
+
+function senaraiMarkah(nama, markah){
+    if ( markah >= 80 ) return 'nama : ' + nama + '\n' +'Gred : ' + 'A'
+    else if( markah >= 65) return 'B'
+    else if( markah >= 50) return 'C'
+    else if( markah >= 40) return 'D'
+    else if( markah >= 0) return 'F'
+}
+
+const markahPelajar = senaraiMarkah('Ali', 90)
+let result
+if ( markahPelajar >= 40 ) {
+    result = 'Tahniah '
+}
+else {
+    result = 'cuba lagi! '
+}
+
+console.log(result + '\n' + markahPelajar)
 
 
-// // 2 , 4, 7, 9 , 11
-// // function untuk total tambah arguments( built - in func)
-// function total(){
-//     // hasil harus ada nilai awal sebelum terima nilai jika tidak NaN / undefined
-//     let hasil = ''
 
-//     for( let i = 0; i < arguments.length; i++ ){
-//         hasil += arguments[i]
-//     }
-//     return hasil
-// }
-// console.log('semua total dari arg = ' + total('is', 'kan', 'dar'))
-// // paparkan
+// Objek
+// Tujuan: susun data structre and function ( method )
+// Bila Digunakan: uruskan banyak data berkaitan seperti maklumat pengguna atau produk.
+
+// Objek
+
+// this =   merujuk kepada objek yang sedang panggil method tu
+// Dalam kes ni: this = pelajar
+
+// this.property	        Bila akses nilai dalam objek yang sama
+// property (tanpa this)	Bila property wujud dalam global/local scope
+
+// nama dan hp bukan pembolehubah global
+// JS akan cari nama dalam function scope atau global scope, tapi tak jumpa
+
+// Sebab tu ReferenceError
+
+
+const pelajar = {
+    nama: 'Iskandar',
+    hp: [11, 'XR'],
+    kenalDiri: function(){
+        console.log(`nama saya ${this.nama} dan hp saya ada ${this.hp}`)
+    }
+}
+
+// Sebab arrow function tak ada this sendiri — dia ambil dari scope luar (global).
+
+// So dalam object method, elakkan arrow function kalau nak guna this.
+
+
+// function untuk kenalkan diri = paparkan
+
+// Akses data dalam objek
+console.log(pelajar.nama)
+// Iskandar
+pelajar.kenalDiri()
+// Hai, saya Iskandar dan saya belajar JavaScript.
+
+
+// 2 , 4, 7, 9 , 11
+// function untuk total tambah arguments( built - in func)
+function total(){
+    // hasil harus ada nilai awal sebelum terima nilai jika tidak NaN / undefined
+    let hasil = ''
+
+    for( let i = 0; i < arguments.length; i++ ){
+        hasil += arguments[i]
+    }
+    return hasil
+}
+console.log('semua total dari arg = ' + total('is', 'kan', 'dar'))
+// paparkan
 
 
 
 // minta input paparkan inputnya jika 2 keluar 2
-// let nilai = prompt('pilih no 1 atau 2 sahaja')
-// if( nilai == 1 ){
-//     console.log('no 1')
-// }
-// else if ( nilai == 2){
-//     console.log('no2')
-// }
-// else {
-//     console.log('pilih 1 dan 2 sahaja')
-// }
+let nilai = prompt('pilih no 1 atau 2 sahaja')
+if( nilai == 1 ){
+    console.log('no 1')
+}
+else if ( nilai == 2){
+    console.log('no2')
+}
+else {
+    console.log('pilih 1 dan 2 sahaja')
+}
 
 
-// // minta input
-// let nilai = prompt('masukkan no untuk kenal pasti genap atau ganjil')
-// // kira baki jika genap atau ganjil
-// function kiraNilai(){
-//     if ( nilai % 2 === 0 ) return console.log('no anda genap')
-//     if ( nilai % 2 === 1 ) return console.log('no anda ganjil')
+// minta input
+let nilai = prompt('masukkan no untuk kenal pasti genap atau ganjil')
+// kira baki jika genap atau ganjil
+function kiraNilai(){
+    if ( nilai % 2 === 0 ) return console.log('no anda genap')
+    if ( nilai % 2 === 1 ) return console.log('no anda ganjil')
 
-// }
-// kiraNilai()
-// // paparkan
+}
+kiraNilai()
+// paparkan
 
 
 
@@ -260,25 +278,25 @@
 // hp ke 5, 8, 10 tengah repair
 // hp ke 7 dan 9 rosak
 
-// let totalHp = 10
-// let hpElok = 6
+let totalHp = 10
+let hpElok = 6
 
-// for ( let nilaiHp = 1; nilaiHp <= totalHp; nilaiHp++ ){
+for ( let nilaiHp = 1; nilaiHp <= totalHp; nilaiHp++ ){
 
-// // elok
-//     if ( nilaiHp <= hpElok && nilaiHp != 5 ){
-//         console.log('hp yang elok = ' + nilaiHp +'x')
-//     }
-//     // tengah repair
-//     else if( nilaiHp == 5 || nilaiHp == 8 || nilaiHp == 10 ){
-//         console.log('hp yang tengah repair = ' + nilaiHp + 'x')
-//     }
+// elok
+    if ( nilaiHp <= hpElok && nilaiHp != 5 ){
+        console.log('hp yang elok = ' + nilaiHp +'x')
+    }
+    // tengah repair
+    else if( nilaiHp == 5 || nilaiHp == 8 || nilaiHp == 10 ){
+        console.log('hp yang tengah repair = ' + nilaiHp + 'x')
+    }
 
-// // rosak
-//     else if( nilaiHp == 7 || nilaiHp == 9 ){
-//         console.log('hp yang tengah rosak = ' + nilaiHp + 'x')
-//     }
-// }
+// rosak
+    else if( nilaiHp == 7 || nilaiHp == 9 ){
+        console.log('hp yang tengah rosak = ' + nilaiHp + 'x')
+    }
+}
 
 
 // logic telesuri jika dah 0 jadi 1
@@ -290,25 +308,25 @@
 // Langkah 5: faktori(1) akan kira 1 * faktori(0)
 // Langkah 6: faktori(0) akan terus memulangkan 1 (kes asas)
 
-// function logic( value ){
-//     if ( value === 1 ) return 1
-//     return value * logic(value - 1)
-// }
-// console.log(logic(5))
+function logic( value ){
+    if ( value === 1 ) return 1
+    return value * logic(value - 1)
+}
+console.log(logic(5))
 
 
 
 // kira dari arg yang diberikan bukan parameter
-// function kiraSemuaArg(){
-//     let nilaiArg = 0
-//     for (let i = 0; i < arguments.length; i++){
-//         nilaiArg += arguments[i]
-//     }
-//     return nilaiArg
-// }
-// let arg = kiraSemuaArg(3, 4, 5, 6, 13)
+function kiraSemuaArg(){
+    let nilaiArg = 0
+    for (let i = 0; i < arguments.length; i++){
+        nilaiArg += arguments[i]
+    }
+    return nilaiArg
+}
+let arg = kiraSemuaArg(3, 4, 5, 6, 13)
 
-// console.log(arg)
+console.log(arg)
 
 
 </script>

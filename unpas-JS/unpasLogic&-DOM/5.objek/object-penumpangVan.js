@@ -1,6 +1,7 @@
-//hasil += arg -> hasil = hasil + arg[i] & i++ -> i = i + 1 
+// hasil += arg -> hasil = hasil + arg[i] & i++ -> i = i + 1 
 // Parameter adalah nama pemboleh ubah yang ditentukan dalam definisi fungsi
 // Argumen adalah nilai sebenar
+// salam("Iskandar"); // "Iskandar" = argumen
 
 //  buat objek van
 
