@@ -1,22 +1,35 @@
+// EMEBEDED EXPRESSION
+console.log(`${ 1 + 1 }`)
+console.log(`${alert('kjdfla halo')}`)
+
 const x = 11
 console.log(`${ ( x % 2  == 0 ) ? 'genap' : 'ganjl'}`)
 
 // ctrl / , = setting
 // 1. HTML Fragments
-// const iskandar = {
-//     nama: 'iskandar',
-//     umur: 20,
-//     makan : function(makanan){
-//         return `suka makan ${makanan}`
-//     }
-// }
-// const el = `<div class="is">
-//     <h4>${iskandar.nama}</h4>
-//     <h4>${iskandar.umur}</h4>
-//     <h4>${iskandar.makan('ayam')}</h4>
-// </div>`
 
-// console.log(el)
+const iskandar = {
+    nama: 'iskandar',
+    umur: 20,
+    makan : function(makanan){
+        return `suka makan ${makanan}`
+    }
+}
+const el = `<div class="is">
+    <h2>${iskandar.nama}</h2>
+    <h4>${iskandar.umur}</h4>
+    <h4>${iskandar.makan('ayam')}</h4>
+</div>`
+
+console.log(el)
+
+
+const is = document.querySelector('.iskandar')
+is.innerHTML = el
+is.style.backgroundColor = 'cyan'
+
+
+
 
 // 2. looping
 const student = [
@@ -44,15 +57,22 @@ const student = [
     
 ]
 
-// const el = `<div class="student">
+// const ele = `<div class="student">
 //     <h4>${student[1].nama}</h4>
 //     <h4>${student[2].favFood('ayam')}</h4>
 // </div>`
+// is.innerHTML = ele
 
-const el = student.map( std =>  `<div class="student">
-    <h4>${std.nama}</h4>
-    <h4>${std.favFood('ayam')}</h4>
-</div>`).join('')
+
+
+// std = elemen atau value obj tu
+
+
+// const elem = student.map( std =>  `<div class="student">
+//     <h4>${std.nama}</h4>
+//     <h4>${std.favFood('ayam')}</h4>
+// </div>`).join('br - each')
+// is.innerHTML = elem
 
 
 
@@ -66,23 +86,28 @@ const lagu = {
     feat: 'Justin Bieber'
 }
 
+
 let songTitle = lagu.judul
 
-if (lagu.feat){
-    songTitle +=` (feat ${lagu.feat})`
-//    lagu.judul +=` (feat ${lagu.feat})`
-}
-// ${ ( lagu.feat ) ? `(feat ${lagu.feat})` : '' }
+// if (lagu.feat){
+//     songTitle +=` (feat ${lagu.feat})`
+// //    lagu.judul +=` (feat ${lagu.feat})`
+// }
+
 
 
 const elemnt = `<div class="lagu">
     <ul>
-        <li>Penyanyi :${lagu.penyanyi} s ${lagu.feat}</li>
-        <li>Lagu : ${songTitle} </li> 
+        <li>Penyanyi :${lagu.penyanyi}</li>
+        <li>Lagu : ${songTitle} -> ${ ( lagu.feat ) ? `(feat ${lagu.feat})` : '' }</li> 
         <!-- <li>Lagu : ${lagu.judul}</li> -->
 
     </ul>
 </div>`
+
+// is.innerHTML = elemnt
+
+
 
 // 4 nested
 // HTML fragments
@@ -92,18 +117,18 @@ const ilp = {
     ketuaTpp: 'aldzukhruf',
     semester: 4
 }
-function loopBengkel( course ){
-    return `
-    <ol> 
-        ${ course.map( each => `<li>${each}</li>`)
-        .join('') }
-    </ol>
-    `
+
+function course(bengkel){
+    return `<ul>
+        ${bengkel.map( a => `<li>${a}</li>`).join('')}
+    </ul>`
 }
-const elemen = `<div class="ilp">
-    <h3>Ketua Bengkel : ${ilp.ketuaTpp}</h3>
-    <h3>Semester : ${ilp.semester}</h3>
-    <h3>Bengkel : </h3>
-    ${loopBengkel( ilp.bengkel )}
-</div>`
-document.body.innerHTML = elemen
+    // ${ilp.bengkel.map( a => `<li>${a}</li>`).join('')}
+
+const ilpkls = 
+    `<h3>${ilp.ketuaTpp}</h3>
+    <h5>${ilp.semester}</h5>
+    ${course(ilp.bengkel)}
+    `
+
+is.innerHTML = ilpkls

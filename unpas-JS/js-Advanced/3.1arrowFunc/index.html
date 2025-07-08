@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         body {
-            background-color: red;
+            /* background-color: red; */
         }
         span{
             background-color: blueviolet;
@@ -15,7 +15,86 @@
 </head>
 <body>
     
-    <h2>lebih <span>ringkas</span>  dari func <em>expres</em></h2>
+    <!-- <h2>lebih <span>ringkas</span>  dari func <em>expres</em></h2> -->
+
+    <table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Penulisan</th>
+      <th>Parameter</th>
+      <th>Return</th>
+      <th>Keterangan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>() => "Hi"</code></td>
+      <td>❌ (Tiada)</td>
+      <td>✅ Auto-return</td>
+      <td>Paling ringkas, return string terus</td>
+    </tr>
+    <tr>
+      <td><code>a => a * 2</code></td>
+      <td>✅ 1 parameter</td>
+      <td>✅ Auto-return</td>
+      <td>Boleh tanpa <code>()</code> bila 1 parameter</td>
+    </tr>
+    <tr>
+      <td><code>(a, b) => a + b</code></td>
+      <td>✅ 2+ parameter</td>
+      <td>✅ Auto-return</td>
+      <td>Diguna untuk operasi ringkas</td>
+    </tr>
+    <tr>
+      <td><code>a => ({nama: a})</code></td>
+      <td>✅ 1 parameter</td>
+      <td>✅ Return object</td>
+      <td>Mesti bungkus object dalam <code>()</code></td>
+    </tr>
+    <tr>
+      <td><code>() => ({status: "ok"})</code></td>
+      <td>❌</td>
+      <td>✅ Return object</td>
+      <td>Tanpa parameter, return object literal</td>
+    </tr>
+    <tr>
+      <td><code>(a, b) => { return a + b; }</code></td>
+      <td>✅</td>
+      <td>❌ Manual return</td>
+      <td>Block body perlukan <code>return</code></td>
+    </tr>
+    <tr>
+      <td><code>() => { console.log("test"); }</code></td>
+      <td>❌</td>
+      <td>❌ Tiada return</td>
+      <td>Untuk side-effect sahaja</td>
+    </tr>
+    <tr>
+      <td><code>(a, b) => { const x = a * b; return x + 1; }</code></td>
+      <td>✅</td>
+      <td>❌ Manual return</td>
+      <td>Diguna jika logic lebih dari 1 baris</td>
+    </tr>
+    <tr>
+      <td><code>() => 123</code></td>
+      <td>❌</td>
+      <td>✅ Return nombor</td>
+      <td>Return number terus</td>
+    </tr>
+    <tr>
+      <td><code>() => [1, 2, 3]</code></td>
+      <td>❌</td>
+      <td>✅ Return array</td>
+      <td>Return array secara terus</td>
+    </tr>
+    <tr>
+      <td><code>() => null</code></td>
+      <td>❌</td>
+      <td>✅ Return null</td>
+      <td>Return nilai khas/null</td>
+    </tr>
+  </tbody>
+</table>
 
 
     <script src="script.js"></script>

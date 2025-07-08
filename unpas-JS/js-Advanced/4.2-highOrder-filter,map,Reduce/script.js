@@ -1,17 +1,17 @@
-// const nombor = [4, 6, -3, 9, 4, -6, 8, 3, 2, -9]
-// // 10 index = 9
+const nombor = [4, 6, -3, 9, 4, -6, 8, 3, 2, -9]
+// 10 index = 9
 
-// // mencari nombor >= 3
-// // simpan nombor baru tu dalam variable
+// mencari nombor >= 3
+// simpan nombor baru tu dalam variable
 
-// const newNom = []
-// for ( i = 0; i < nombor.length; i++ ){
-//     if ( nombor[i] >= 3 ){
-//         newNom.push(nombor[i])
-//     }
-// }
+const newNom = []
+for ( i = 0; i < nombor.length; i++ ){
+    if ( nombor[i] >= 3 ){
+        newNom.push(nombor[i])
+    }
+}
 
-// console.table(newNom.sort())
+console.table(newNom.sort())
 
 // // filter    -   > function callback
 // // a = stiap elemen array nombor
@@ -52,13 +52,14 @@
 
 // 1 ambil semua elemen video
 // ambil dari li
-const videos = Array.from( document.querySelectorAll('[data-duration]') ) // - > 12 nodelist tukar jadi array baru boleh higher order func
+const videos = Array.from( document.querySelectorAll('[data-duration]') ) // - > 12 nodelist tukar jadi array baru boleh higher order func 
 
 
 // 2. pilih hanya yang ` JAVASCRIPT LANJUTAN `
 let jsLanjut = videos.filter( ( video ) => {
      return video.textContent.includes('JAVASCRIPT LANJUTAN')
      } )
+    //  INCLUDE = TERDAPAT ADA APA
 
 // 3. ambil durasi masing2 video  
 // data set 
@@ -71,7 +72,7 @@ let jsLanjut = videos.filter( ( video ) => {
             // split [11, 18] tpi msih string so tukr float
 
             const pecahan = time.split(':')
-
+// UBAH STRING JADI INTIGER
                 .map( partP => parseFloat(partP) )
 
             return pecahan[0] * 60 + pecahan[1]
