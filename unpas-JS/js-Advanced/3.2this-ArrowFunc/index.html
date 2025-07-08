@@ -16,6 +16,28 @@
 
 
 
+<p>Lexical Scope? (Skop Secara Penulisan)</p>
+    <h3>
+        Function dalam boleh nampak dan guna pemboleh ubah function luar."
+(tapi yang luar tak boleh nampak dalam)
+    </h3>
+    <script>
+        function ibu() {
+  let nama = 'Iskandar';
+
+  function anak() {
+    console.log(nama); // boleh akses, sebab dalam skop
+  }
+
+  anak();
+}
+ibu();
+
+    </script>
+    <p>anak() boleh akses nama kerana nama ditulis dalam skop luar dia — ini lexical scope.
+
+</p>
+<i> anak() bukan lexical scope, tapi anak() berada dalam lexical scope ibu().</i>
 
 
 <hr>
@@ -23,6 +45,10 @@
 <div class="box"></div>
 <div class="size"></div>
 <div class="caption">he</div>
+
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button>
+
 
     <script src="script.js"></script>
 </body>

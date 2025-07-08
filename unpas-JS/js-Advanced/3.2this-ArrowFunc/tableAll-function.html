@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📘 Jenis Function JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px 15px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    code {
+      background-color: #eef;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Jenis Function JavaScript – Jadual Ringkasan</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>💡 Jenis Function</th>
+        <th>📝 Definisi</th>
+        <th>⚙️ Ciri Khas</th>
+        <th>📌 Contoh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Named Function</td>
+        <td>Function yang ada nama</td>
+        <td>Boleh dipanggil semula</td>
+        <td><code>function hello() { ... }</code></td>
+      </tr>
+      <tr>
+        <td>Anonymous Function</td>
+        <td>Function tanpa nama</td>
+        <td>Biasanya digunakan sekali / sebagai argumen</td>
+        <td><code>function() { ... }</code></td>
+      </tr>
+      <tr>
+        <td>Arrow Function</td>
+        <td>Sintaks ringkas guna <code>=&gt;</code></td>
+        <td>Tiada <code>this</code> sendiri</td>
+        <td><code>(x) =&gt; x * 2</code></td>
+      </tr>
+      <tr>
+        <td>Callback Function</td>
+        <td>Function dihantar sebagai argumen ke function lain</td>
+        <td>Dipanggil oleh function lain</td>
+        <td><code>array.map(function(x) { return x*2 })</code></td>
+      </tr>
+      <tr>
+        <td>Function Expression</td>
+        <td>Function yang disimpan dalam pemboleh ubah</td>
+        <td>Dinamakan oleh variable</td>
+        <td><code>const hi = function() { ... }</code></td>
+      </tr>
+      <tr>
+        <td>Inner Function</td>
+        <td>Function dalam function lain</td>
+        <td>Akses variable parent (lexical)</td>
+        <td><code>function luar() { function dalam() { ... } }</code></td>
+      </tr>
+      <tr>
+        <td>Closure</td>
+        <td>Function yang ingat variable luar walaupun parent dah habis</td>
+        <td>Simpan state/private</td>
+        <td><code>function luar() { let a=1; return function() { console.log(a) }}</code></td>
+      </tr>
+      <tr>
+        <td>Constructor Function</td>
+        <td>Function untuk buat objek baru dengan <code>new</code></td>
+        <td>Guna <code>this</code> untuk tetapkan property</td>
+        <td><code>function Person(nama) { this.nama = nama }</code></td>
+      </tr>
+      <tr>
+        <td>IIFE (Immediately Invoked)</td>
+        <td>Function yang terus dijalankan lepas didefinisikan</td>
+        <td>Dibalut dalam <code>()</code> dan dipanggil <code>()</code></td>
+        <td><code>(function() { console.log("jalan") })()</code></td>
+      </tr>
+      <tr>
+        <td>Generator Function</td>
+        <td>Function dengan <code>function*</code> dan <code>yield</code></td>
+        <td>Return banyak nilai satu persatu</td>
+        <td><code>function* gen() { yield 1; yield 2; }</code></td>
+      </tr>
+      <tr>
+        <td>Async Function</td>
+        <td>Function async yang boleh guna <code>await</code></td>
+        <td>Return promise</td>
+        <td><code>async function getData() { let res = await fetch(url) }</code></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

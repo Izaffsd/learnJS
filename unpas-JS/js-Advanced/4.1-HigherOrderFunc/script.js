@@ -22,12 +22,12 @@ h2.addEventListener('mouseenter', function(){
 })
 
 
-// function hi( waktu ){
-//     return function( nama ){
-//         return `hi ${nama}, sekrg masa ${waktu}, ok`
-//     }
-// }
+function hi( waktu ){
+    return function( nama ){
+        return `hi ${nama}, sekrg masa ${waktu}, ok`
+    }
+}
 
-// let malam = hi('malam')
-// console.dir(malam('iskandar'))
+let malam = hi('malam')
+console.dir(malam(3))
 
