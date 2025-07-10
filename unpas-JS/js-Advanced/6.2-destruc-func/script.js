@@ -5,9 +5,9 @@ function total(a, b){
 // console.log( total(4, 5)[0] )
 // console.log( total(4, 5)[1] )
 
-const [jum, kali] = total(4, 5)
+const [tambah, kali] = total(4, 5)
 
-console.log(jum)
+console.log(tambah)
 
 const pel = {
     nama: 'is',

@@ -156,7 +156,7 @@ const izkan = {
 //     return izkan.bran
 // }
 
-function pecObj( { website, ber} ){
+function pecObj( { website, ber } ){
     return { website, ber } 
 }
 console.log(pecObj(izkan))
