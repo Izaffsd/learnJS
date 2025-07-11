@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Kesimpulan & Concurrency</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    .topic {
+      font-weight: bold;
+      font-family: monospace;
+      font-size: 1.2em;
+    }
+    .desc {
+      display: block;
+      font-family: monospace;
+      color: #666;
+      margin-top: 5px;
+    }
+    .details {
+      font-family: monospace;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+    .details b {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <h4>http://latentflip.com/loupe/</h4>
+  <h1>Kesimpulan</h1>
+  <ul>
+    <li>
+      <span class="topic">Single vs Multi Thread</span>
+      <span class="desc">Lingkungan eksekusi ‘task’</span>
+    </li>
+    <li>
+      <span class="topic">Blocking vs Non-blocking</span>
+      <span class="desc">Teknik ‘ngoding’ (IO related)</span>
+    </li>
+    <li>
+      <span class="topic">Synchronous vs Asynchronous</span>
+      <span class="desc">Teknik ‘ngoding’ (HTTP Request related)</span>
+    </li>
+    <li>
+      <span class="topic">Concurrent vs Parallel</span>
+      <span class="desc">Lingkungan eksekusi ‘task’</span>
+    </li>
+  </ul>
+
+  <h2>Asynchronous JavaScript</h2>
+  <ul>
+    <li><span class="topic">Callback</span></li>
+    <li><span class="topic">Promise</span></li>
+    <li><span class="topic">ajax</span></li>
+    <li><span class="topic">Async & Await</span></li>
+  </ul>
+
+  <h3>
+    JavaScript is a <b>single-threaded (line by line), non-blocking, asynchronous</b> and <b>concurrent</b> language.
+  </h3>
+
+  <div class="details">
+    Asynchronous + Single-threaded = <b>Concurrency</b> <br>
+    Asynchronous + Multi-threaded = <b>Parallelism</b>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

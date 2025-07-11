@@ -40,9 +40,9 @@ function hello(){
 // x = 5;
 // console.log(x); // 5
 
-// // 1. Variabel global (var) dieksekusi terlebih dahulu.
-// // 2. Fungsi hanya dideklarasikan, tetapi tidak langsung dijalankan.
-// // 3. console.log(printURL(username)) memanggil fungsi, dan hasilnya dicetak.
+// 1. Variabel global (var) dieksekusi terlebih dahulu.
+// 2. Fungsi hanya dideklarasikan, tetapi tidak langsung dijalankan.
+// 3. console.log(printURL(username)) memanggil fungsi, dan hasilnya dicetak.
 
 // var nama = 'Iskandar'
 // var username = 'Izaffsd'
