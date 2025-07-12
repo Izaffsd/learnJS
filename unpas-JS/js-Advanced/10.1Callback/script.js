@@ -39,6 +39,8 @@
 
 
 
+// Contoh kalau guna fetch() (native JS), tak ada data — kau terus dapat json():
+
 // fetch('dataPel.json') // Fail JSON mesti dalam folder sama
 //   .then(response => response.json())
 //   .then(data => {
@@ -47,6 +49,20 @@
 //     });
 //   })
 // .catch(err => console.error('Gagal fetch:', err));
+
+
+
+// Jika kau guna Axios, axios.get(url) akan beri response object yang lebih kurang macam ni:
+
+// {
+//   data: {...},           // ✅ Kandungan sebenar dari API (ini yang kita nak!)
+//   status: 200,
+//   statusText: "OK",
+//   headers: {...},
+//   config: {...},
+//   request: {...}
+// }
+
 
 const list = document.getElementById('list')
 axios.get('dataPel.json')

@@ -84,6 +84,14 @@ console.log(newNd)
 
 
 
+// Penjelasan Setiap Pusingan:
+// Pusingan	accumulator	currentValue	Hasil Terkini
+// 1	    0	             2	        0 + 2 = 2
+// 2	    2	             4	        2 + 4 = 6
+// 3	    6	             6	        6 + 6 = 12
+
+
+
 // reduce jumlahkan seluruh elemen pada number 
 // kalau tak tulis nilai awal = ,0 
 // const newNomb = nombor.reduce( (accumulator, currentValue) =>
@@ -102,4 +110,25 @@ const newVal = nombor
 
 
 console.log(newVal)
- 
+
+// const nombor = [2, 4, 6];
+
+// const hasil = nombor.reduce((acc, cur, index) => {
+//   console.log(`Index ${index} -> Acc: ${acc}, Cur: ${cur}`);
+//   return acc + cur;
+// }, 0);
+
+// Index 0 -> Acc: 0, Cur: 2
+// Index 1 -> Acc: 2, Cur: 4
+// Index 2 -> Acc: 6, Cur: 6
+
+
+// const users = ['Ali', 'Iskandar', 'Amir'];
+
+// const result = users.find(user => user.startsWith('Is'));
+// console.log(result); // Iskandar
+
+// const arr = [5, 1, 10, 3];
+
+// arr.sort((a, b) => a - b);
+// console.log(arr); // [1, 3, 5, 10]
