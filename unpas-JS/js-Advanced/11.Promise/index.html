@@ -10,6 +10,59 @@
 <body>
     <h4>AJAX ialah singkatan untuk Asynchronous JavaScript and XML.</h4>
     <h5>AJAX ialah teknik dalam JavaScript yang digunakan untuk: Mengambil atau menghantar data ke server tanpa reload halaman (tanpa refresh page).</h5>
+
+
+    <h2>
+        ⚡ Apa Itu Promise?
+Promise adalah objek khas dalam JavaScript yang mewakili hasil masa depan (akan datang) dari operasi asynchronous.
+
+Promise ada 3 keadaan:
+        Status	    Maksud
+        pending	    Belum selesai
+        fulfilled	Berjaya
+        rejected	Gagal (error)
+    </h2>
+
+
+    <h1>fetch() adalah contoh fungsi yang return Promise
+
+then() dan catch() digunakan untuk tunggu hasil
+
+async/await digunakan untuk mudahkan tulis kod yang tunggu Promise</h1>
+<h3>resolve() bermaksud janji berjaya — akan dihantar ke .then().</h3>
+<h3>.then() digunakan selepas promise berjaya.</h3>
+
+<h2>Sekarang, kita tukar cara then() jadi async/await (lebih kemas).</h2>
+
+| Baris              | Maksud                          |
+| ------------------ | ------------------------------- |
+| `async function`   | Buat function async             |
+| `await fetch(...)` | Tunggu sampai fetch siap        |
+| `await res.json()` | Tunggu hasil convert JSON       |
+| `try...catch`      | Tangkap error kalau ada masalah |
+
+
+<script>
+// fetch("https://www.omdbapi.com/?apikey=e3f9e626&s=batman")
+//   .then(response => response.json())  // Ini pun return promise
+//   .then(data => console.log(data))    // Data berjaya
+//   .catch(error => console.error("Error:", error)); // Kalau gagal
+
+
+
+  async function getProduct() {
+  try {
+    const res = await fetch("https://dummyjson.com/products/1");
+    const data = await res.json();
+    console.log(data.title);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+getProduct(); // panggil function
+
+</script>
     <script src="script.js"></script>
 </body>
 </html>

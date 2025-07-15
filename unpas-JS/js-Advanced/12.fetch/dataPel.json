@@ -1,0 +1,26 @@
+[
+  {
+    "nama": "Iskandar",
+    "umur": 20,
+    "hobby": {
+      "utama": "Coding",
+      "kedua": "Membaca"
+    }
+  },
+  {
+    "nama": "Aina",
+    "umur": 19,
+    "hobby": {
+      "utama": "Melukis",
+      "kedua": "Menonton drama"
+    }
+  },
+  {
+    "nama": "Farhan",
+    "umur": 21,
+    "hobby": {
+      "utama": "Gaming",
+      "kedua": "Berenang"
+    }
+  }
+]

@@ -7,22 +7,22 @@ const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=e3f9e626'
 
 
 // // constoh promise 1 ( tak nampak pending)
-// let dapat1 = false
-// const janji1 = new Promise( ( resolve, reject ) => {
-//     if( dapat1 ){
-//         resolve('janji telah ditepati')
-//     }
-//     else{
-//         reject('ingkar janji')
-//     }
-// } )
+let dapat1 = false
+const janji1 = new Promise( ( resolve, reject ) => {
+    if( dapat1 ){
+        resolve('janji telah ditepati')
+    }
+    else{
+        reject('ingkar janji')
+    }
+} )
+ 
+console.log(janji1)
 
-// console.log(janji1)
-
-// // tangkap resolve or reject = janji telah ditepati / ingkar janji
-// janji1
-//     .then( ( respone ) => console.log('ok ' + respone ) )
-//     .catch( ( respone ) => console.log( 'tak ok ' + respone ) )
+// tangkap resolve or reject = janji telah ditepati / ingkar janji
+janji1
+    .then( ( respone ) => console.log('ok ' + respone ) )
+    .catch( ( respone ) => console.log( 'tak ok ' + respone ) )
 
 
 
