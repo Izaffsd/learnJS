@@ -4,8 +4,6 @@ while ( tanya ) {
     var player = prompt("masukkan pilihan anda | gunting, kertas & batu");
 // amik input or pilihan player
 
-
-
     // amik pilhan computer
 
     var comp = Math.random();

@@ -21,7 +21,7 @@ const sectionA = document.querySelector('section#a');
             
 
 const p2 = document.querySelector('.p2');
-// p2.setAttribute("class", "pclass2"); // class p2 hilang 
+// p2.setAttribute("class", "pclass2"); // class p2 hilang
 
 // tambah atau manipulate class
 // p2.classList.add('label')
