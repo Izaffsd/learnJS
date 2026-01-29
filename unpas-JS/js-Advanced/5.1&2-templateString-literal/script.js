@@ -42,14 +42,14 @@ const student = [
     }
     ,
     {
-        nama: 'zul',
+        nama: 'ahmeng',
         favFood: function(food){
             return `${this.nama} suka makan ${food}`
         }
     }
     ,
     {
-        nama: 'ald',
+        nama: 'salman',
         favFood: function(food){
             return `${this.nama} suka makan ${food}`
         }
@@ -114,7 +114,7 @@ const elemnt = `<div class="lagu">
 
 const ilp = {
     bengkel: ['tpp', 'cadd', 'tpm', 'tkr'],
-    ketuaTpp: 'aldzukhruf',
+    ketuaTpp: 'salman khan',
     semester: 4
 }
 

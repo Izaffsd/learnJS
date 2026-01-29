@@ -3,9 +3,9 @@ var star = '';
     // mengawal coloum sebb dah letak j <= i klau tak row 
 for (var col = 6; col >= 0; col--){
 
-            // <= jadi * = 7 colom          
-    for (var j = 0; j <= col; j++){                                                  
-        star += "*";                                                               
+            // <= jadi * = 7 colom
+    for (var j = 0; j <= col; j++){
+        star += "*";
 
     }
     star += '\n';
